@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert PNG to JPG online for free. Fast, secure, no signup required. Works on all devices with high-quality image output.">
+    <meta name="keywords" content="png to jpg, png to jpg converter, convert png to jpg, png file to jpg, png to jpg image converter">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="PNG to JPG Converter">
+    <title>PNG to JPG Converter – Free Online Image Conversion Tool</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PNG to JPG Converter – Free Online Image Conversion Tool">
+    <meta property="og:description" content="Convert PNG to JPG online for free. Fast, secure, no signup required.">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PNG to JPG Converter – Free Online Image Conversion Tool">
+    <meta name="twitter:description" content="Convert PNG to JPG online for free. Fast, secure, no signup required.">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --bg-primary: rgba(255, 255, 255, 0.95);
+            --bg-secondary: rgba(255, 255, 255, 0.8);
+            --bg-tertiary: rgba(255, 255, 255, 0.6);
+            --text-primary: #1a1a2e;
+            --text-secondary: #16213e;
+            --text-tertiary: #0f3460;
+            --text-inverse: white;
+            --accent-1: #ff006e;
+            --accent-2: #8338ec;
+            --accent-3: #3a86ff;
+            --accent-4: #06ffa5;
+            --accent-5: #ffbe0b;
+            --border-color: rgba(131, 56, 236, 0.3);
+            --border-hover: rgba(131, 56, 236, 0.6);
+            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow-lg: rgba(131, 56, 236, 0.3);
+            --footer-bg: rgba(26, 26, 46, 0.95);
+            --footer-border: rgba(255, 255, 255, 0.1);
+            --footer-text: #ffffff;
+            --footer-text-secondary: rgba(255, 255, 255, 0.8);
+            --footer-text-tertiary: rgba(255, 255, 255, 0.6);
+            --gradient-1: linear-gradient(135deg, #ff006e 0%, #8338ec 50%, #3a86ff 100%);
+            --gradient-2: linear-gradient(135deg, #06ffa5 0%, #3a86ff 50%, #8338ec 100%);
+            --gradient-3: linear-gradient(135deg, #ffbe0b 0%, #ff006e 50%, #8338ec 100%);
+        }
+        
+        [data-theme="dark"] {
+            --bg-primary: rgba(26, 26, 46, 0.95);
+            --bg-secondary: rgba(26, 26, 46, 0.8);
+            --bg-tertiary: rgba(26, 26, 46, 0.6);
+            --text-primary: #f0f0f0;
+            --text-secondary: #d0d0d0;
+            --text-tertiary: #b0b0b0;
+            --text-inverse: #1a1a2e;
+            --border-color: rgba(131, 56, 236, 0.4);
+            --border-hover: rgba(131, 56, 236, 0.7);
+            --shadow: rgba(0, 0, 0, 0.3);
+            --shadow-lg: rgba(131, 56, 236, 0.4);
+            --footer-bg: rgba(15, 15, 30, 0.95);
+            --footer-border: rgba(255, 255, 255, 0.1);
+            --footer-text: #ffffff;
+            --footer-text-secondary: rgba(255, 255, 255, 0.8);
+            --footer-text-tertiary: rgba(255, 255, 255, 0.6);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -2;
+            transition: background 0.4s ease;
+        }
+        
+        [data-theme="dark"] body::before {
+            background: linear-gradient(135deg, #0d1117 0%, #1a0a2e 25%, #16213e 50%, #0f3460 75%, #1a1a2e 100%);
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 0, 110, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(131, 56, 236, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(58, 134, 255, 0.3) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+            z-index: -1;
+            transition: background 0.4s ease;
+        }
+        
+        [data-theme="dark"] body::after {
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(131, 56, 236, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(58, 134, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(6, 255, 165, 0.1) 0%, transparent 50%);
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+                0 0 100px rgba(131, 56, 236, 0.2);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: slideIn 0.6s ease-out;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .container:hover {
+            box-shadow: 
+                0 25px 70px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+                0 0 120px rgba(131, 56, 236, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        header {
+            background: var(--gradient-1);
+            color: var(--text-inverse);
+            padding: 60px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.4s ease;
+        }
+        
+        [data-theme="dark"] header {
+            background: linear-gradient(135deg, #1a0a2e 0%, #16213e 25%, #0f3460 50%, #1a1a2e 75%, #0d1117 100%);
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        [data-theme="dark"] header::before {
+            background: radial-gradient(circle, rgba(131, 56, 236, 0.2) 0%, transparent 70%);
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            background-size: 200% 200%;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        [data-theme="dark"] header::after {
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(131, 56, 236, 0.15) 50%, transparent 70%);
+        }
+        
+        .theme-toggle-wrapper {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            z-index: 10;
+        }
+        
+        .theme-checkbox {
+            opacity: 0;
+            position: absolute;
+        }
+        
+        .theme-checkbox-label {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(10px);
+            width: 60px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            padding: 3px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .theme-checkbox-label:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .theme-checkbox-label .theme-icon {
+            font-size: 12px;
+            transition: all 0.3s ease;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            line-height: 1;
+            position: absolute;
+        }
+        
+        .theme-icon.sun {
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%) scale(0.9);
+            filter: drop-shadow(0 0 2px rgba(255, 190, 11, 0.5));
+        }
+        
+        .theme-icon.moon {
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%) scale(0.9);
+            filter: drop-shadow(0 0 2px rgba(131, 56, 236, 0.5));
+        }
+        
+        .theme-checkbox-label .ball {
+            background: linear-gradient(135deg, #fff, #f0f0f0);
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            border-radius: 50%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 2px 8px rgba(0, 0, 0, 0.3),
+                0 0 0 2px rgba(255, 255, 255, 0.5) inset;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 3;
+        }
+        
+        .theme-checkbox-label .ball::after {
+            content: '🌙';
+            position: absolute;
+            font-size: 13px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .theme-checkbox:checked + .theme-checkbox-label .ball {
+            transform: translateX(30px);
+            background: linear-gradient(135deg, #8338ec, #3a86ff);
+        }
+        
+        .theme-checkbox:checked + .theme-checkbox-label .ball::after {
+            content: '☀️';
+            opacity: 1;
+            transform: scale(0.85);
+        }
+        
+        .theme-checkbox-label .theme-icon.moon {
+            opacity: 0;
+        }
+        
+        .theme-checkbox-label .theme-icon.sun {
+            opacity: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .theme-toggle-wrapper {
+                top: 20px;
+                right: 20px;
+            }
+            
+            .theme-checkbox-label {
+                width: 55px;
+                height: 28px;
+            }
+            
+            .theme-checkbox-label .ball {
+                width: 22px;
+                height: 22px;
+            }
+            
+            .theme-checkbox:checked + .theme-checkbox-label .ball {
+                transform: translateX(27px);
+            }
+            
+            .theme-checkbox-label .theme-icon {
+                font-size: 14px;
+            }
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 1;
+            letter-spacing: -1px;
+            transition: all 0.4s ease;
+        }
+        
+        [data-theme="dark"] h1 {
+            background: linear-gradient(135deg, #8338ec 0%, #3a86ff 50%, #06ffa5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(131, 56, 236, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        [data-theme="dark"] .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 10px rgba(131, 56, 236, 0.3);
+        }
+        
+        main {
+            padding: 50px 30px;
+        }
+        
+        .converter-section {
+            background: var(--bg-secondary);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(131, 56, 236, 0.1) inset;
+        }
+        
+        .converter-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 15px 50px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(131, 56, 236, 0.2) inset;
+        }
+        
+        .upload-area {
+            border: 3px dashed transparent;
+            border-radius: 20px;
+            padding: 70px 30px;
+            text-align: center;
+            background: linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
+                        var(--gradient-1) border-box;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .upload-area::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(131, 56, 236, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .upload-area:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 
+                0 20px 60px rgba(131, 56, 236, 0.3),
+                0 0 0 4px rgba(131, 56, 236, 0.1);
+        }
+        
+        .upload-area:hover::before {
+            opacity: 1;
+        }
+        
+        .upload-area.dragover {
+            background: linear-gradient(var(--bg-tertiary), var(--bg-tertiary)) padding-box,
+                        var(--gradient-2) border-box;
+            transform: scale(1.05);
+            box-shadow: 
+                0 25px 70px rgba(6, 255, 165, 0.4),
+                0 0 0 4px rgba(6, 255, 165, 0.2);
+        }
+        
+        .upload-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(131, 56, 236, 0.3));
+        }
+        
+        .upload-text {
+            font-size: 1.4rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+        
+        .upload-hint {
+            color: var(--text-tertiary);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        #fileInput {
+            display: none;
+        }
+        
+        .preview-section {
+            display: none;
+            margin-top: 30px;
+        }
+        
+        .preview-section.active {
+            display: block;
+        }
+        
+        .preview-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .preview-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .preview-box {
+            background: var(--bg-primary);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(131, 56, 236, 0.1) inset;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .preview-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 15px 40px rgba(131, 56, 236, 0.2),
+                0 0 0 2px rgba(131, 56, 236, 0.2) inset;
+        }
+        
+        .preview-box h3 {
+            margin-bottom: 15px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .preview-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .preview-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .file-info {
+            font-size: 0.9rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+            padding: 8px 12px;
+            background: rgba(131, 56, 236, 0.1);
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        .quality-control {
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(131, 56, 236, 0.05);
+            border-radius: 20px;
+            border: 2px solid rgba(131, 56, 236, 0.1);
+        }
+        
+        .quality-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .quality-label span {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+        
+        .quality-value {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+        
+        #qualitySlider {
+            width: 100%;
+            height: 12px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent-1) 0%, var(--accent-2) 50%, var(--accent-3) 100%);
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(131, 56, 236, 0.3) inset;
+        }
+        
+        #qualitySlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 4px 15px rgba(131, 56, 236, 0.5),
+                0 0 0 3px rgba(255, 255, 255, 0.8) inset;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        #qualitySlider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 
+                0 6px 20px rgba(131, 56, 236, 0.6),
+                0 0 0 3px rgba(255, 255, 255, 0.9) inset;
+        }
+        
+        #qualitySlider::-moz-range-thumb {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 4px 15px rgba(131, 56, 236, 0.5),
+                0 0 0 3px rgba(255, 255, 255, 0.8) inset;
+        }
+        
+        #qualitySlider::-moz-range-thumb:hover {
+            transform: scale(1.2);
+        }
+        
+        .btn {
+            background: var(--gradient-1);
+            color: var(--text-inverse);
+            border: none;
+            padding: 18px 35px;
+            font-size: 1.15rem;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 
+                0 10px 30px rgba(131, 56, 236, 0.4),
+                0 0 0 0 rgba(131, 56, 236, 0.5);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 
+                0 15px 40px rgba(131, 56, 236, 0.5),
+                0 0 0 4px rgba(131, 56, 236, 0.2);
+        }
+        
+        .btn:active {
+            transform: translateY(-2px) scale(1);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.1), rgba(58, 134, 255, 0.1));
+            color: var(--text-primary);
+            border: 2px solid rgba(131, 56, 236, 0.3);
+            margin-top: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.2), rgba(58, 134, 255, 0.2));
+            border-color: rgba(131, 56, 236, 0.5);
+            box-shadow: 0 10px 30px rgba(131, 56, 236, 0.3);
+        }
+        
+        [data-theme="dark"] .btn-secondary {
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.2), rgba(58, 134, 255, 0.2));
+            border-color: rgba(131, 56, 236, 0.4);
+        }
+        
+        [data-theme="dark"] .btn-secondary:hover {
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.3), rgba(58, 134, 255, 0.3));
+            border-color: rgba(131, 56, 236, 0.6);
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 50px 0 30px 0;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            letter-spacing: -1px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+        
+        .content-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--bg-secondary);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(131, 56, 236, 0.15);
+        }
+        
+        .content-section p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .feature-list li {
+            padding: 15px 0 15px 45px;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .feature-list li:hover {
+            background: rgba(131, 56, 236, 0.05);
+            transform: translateX(5px);
+            padding-left: 50px;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            font-size: 1.5rem;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            color: white;
+            -webkit-text-fill-color: white;
+            font-size: 1.2rem;
+        }
+        
+        .steps-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .steps-list li {
+            padding: 20px 0 20px 70px;
+            position: relative;
+            color: var(--text-secondary);
+            border-left: 4px solid transparent;
+            border-image: var(--gradient-1) 1;
+            margin-left: 30px;
+            margin-bottom: 20px;
+            background: rgba(131, 56, 236, 0.03);
+            border-radius: 15px;
+            padding-left: 80px;
+            transition: all 0.3s ease;
+        }
+        
+        .steps-list li:hover {
+            background: rgba(131, 56, 236, 0.08);
+            transform: translateX(5px);
+        }
+        
+        .steps-list li:before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: -20px;
+            top: 20px;
+            background: var(--gradient-1);
+            color: var(--text-inverse);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(131, 56, 236, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .steps-list {
+            counter-reset: step-counter;
+        }
+        
+        .faq-section {
+            margin-top: 50px;
+        }
+        
+        .faq-item {
+            background: var(--bg-secondary);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(131, 56, 236, 0.2);
+        }
+        
+        .faq-question {
+            padding: 25px;
+            font-weight: 700;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .faq-question:hover {
+            background: rgba(131, 56, 236, 0.1);
+            color: var(--accent-2);
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 25px 25px 25px;
+        }
+        
+        .faq-toggle {
+            font-size: 1.8rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 300;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            color: white;
+            -webkit-text-fill-color: white;
+            flex-shrink: 0;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+            background: var(--gradient-2);
+            color: white;
+            -webkit-text-fill-color: white;
+        }
+        
+        .ad-placeholder {
+            background: var(--bg-secondary);
+            border: 2px dashed var(--text-tertiary);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            color: var(--text-tertiary);
+            margin: 30px 0;
+            min-height: 100px;
+            transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .progress-container {
+            display: none !important;
+            margin: 30px 0;
+            background: var(--bg-secondary);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            z-index: 10;
+            transition: all 0.4s ease;
+            border: 2px solid rgba(131, 56, 236, 0.2);
+            box-shadow: 0 10px 30px rgba(131, 56, 236, 0.2);
+        }
+        
+        .progress-container.active {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        .progress-bar-wrapper {
+            width: 100%;
+            height: 40px;
+            background: rgba(131, 56, 236, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) inset;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: var(--gradient-1);
+            background-size: 200% 100%;
+            animation: shimmer 2s linear infinite;
+            border-radius: 20px;
+            width: 0%;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-inverse);
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 
+                0 0 20px rgba(131, 56, 236, 0.5),
+                0 0 40px rgba(131, 56, 236, 0.3);
+        }
+        
+        .progress-text {
+            text-align: center;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        footer {
+            background: var(--footer-bg);
+            backdrop-filter: blur(20px);
+            color: var(--footer-text);
+            padding: 50px 30px;
+            margin-top: 50px;
+            transition: all 0.3s ease;
+            border-top: 3px solid transparent;
+            border-image: var(--gradient-1) 1;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links a {
+            color: var(--footer-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .footer-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .footer-links a:hover {
+            background: rgba(131, 56, 236, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .footer-links a:hover::before {
+            width: 80%;
+        }
+        
+        .footer-section {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid var(--footer-border);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+        
+        .footer-section p {
+            font-size: 1rem;
+            color: var(--footer-text-secondary);
+            line-height: 1.8;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 2px solid var(--footer-border);
+            color: var(--footer-text-tertiary);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .converter-section {
+                padding: 25px;
+            }
+            
+            .upload-area {
+                padding: 50px 20px;
+            }
+            
+            main {
+                padding: 25px;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .steps-list li {
+                padding-left: 60px;
+                margin-left: 20px;
+            }
+            
+            .steps-list li:before {
+                left: -15px;
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="theme-toggle-wrapper">
+                <input type="checkbox" class="theme-checkbox" id="themeCheckbox" aria-label="Toggle dark mode">
+                <label for="themeCheckbox" class="theme-checkbox-label">
+                    <span class="theme-icon moon">🌙</span>
+                    <span class="theme-icon sun">☀️</span>
+                    <span class="ball"></span>
+                </label>
+            </div>
+            <h1>Free PNG to JPG Converter Online</h1>
+            <p class="subtitle">Convert your PNG images to JPG format instantly - 100% free, secure, and works on all devices</p>
+        </header>
+        
+        <main>
+            <section class="converter-section">
+                <h2>Convert PNG to JPG Instantly</h2>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <div class="upload-text">Click to upload or drag and drop</div>
+                    <div class="upload-hint">PNG files only • Max 10MB</div>
+                </div>
+                <input type="file" id="fileInput" accept="image/png">
+                
+                <div class="preview-section" id="previewSection">
+                    <div class="preview-container" id="previewContainer">
+                        <div class="preview-box">
+                            <h3>Original PNG</h3>
+                            <img id="originalPreview" class="preview-image" alt="Original PNG preview">
+                            <div class="file-info" id="originalInfo"></div>
+                        </div>
+                        <div class="preview-box" id="convertedPreviewBox" style="display: none;">
+                            <h3>Converted JPG</h3>
+                            <img id="convertedPreview" class="preview-image" alt="Converted JPG preview">
+                            <div class="file-info" id="convertedInfo"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="quality-control">
+                        <div class="quality-label">
+                            <span>Quality:</span>
+                            <span class="quality-value" id="qualityValue">90%</span>
+                        </div>
+                        <input type="range" id="qualitySlider" min="10" max="100" value="90">
+                    </div>
+                    
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-bar" id="progressBar">0%</div>
+                        </div>
+                        <div class="progress-text" id="progressText">Preparing conversion...</div>
+                    </div>
+                    
+                    <button class="btn" id="convertBtn" style="display: none;"><span>Convert to JPG</span></button>
+                    <button class="btn" id="downloadBtn" style="display: none;"><span>Download JPG</span></button>
+                    <button class="btn btn-secondary" id="convertAnotherBtn" style="display: none;"><span>Convert Another Image</span></button>
+                </div>
+            </section>
+            
+            <!-- <div class="ad-placeholder">
+                Ad placeholder below tool
+                Advertisement
+            </div> -->
+            
+            <section class="content-section">
+                <h2>Why Use Our PNG to JPG Converter?</h2>
+                <p>Our PNG to JPG converter is designed to make image conversion simple and fast. Whether you need to reduce file sizes for web use, meet format requirements for a project, or optimize images for email attachments, this tool handles it all without compromising on quality.</p>
+                <p>Unlike desktop software that requires installation, our converter works directly in your browser. There's no need to download apps or create accounts. Simply upload your PNG file, adjust the quality if needed, and download your JPG image in seconds.</p>
+                <p>All processing happens on your device, ensuring complete privacy and security. Your images never leave your computer, so you can convert sensitive files with confidence. This client-side approach also means lightning-fast conversion speeds, even for large images.</p>
+            </section>
+            
+            <section class="content-section">
+                <h2>How to Convert PNG to JPG Online</h2>
+                <ol class="steps-list">
+                    <li>Click the upload area or drag and drop your PNG file into the converter. The tool accepts PNG images up to 10MB in size.</li>
+                    <li>Wait for the preview to appear. You'll see both your original PNG and the converted JPG side by side for comparison.</li>
+                    <li>Adjust the quality slider if needed. Higher quality (90-100%) preserves more detail but creates larger files. Lower quality (60-80%) reduces file size significantly while maintaining good visual quality.</li>
+                    <li>Click the "Download JPG" button to save your converted image. The file will be saved with a .jpg extension and ready to use.</li>
+                </ol>
+                <p>The entire process takes just a few seconds, and you can convert multiple images one after another without any limitations.</p>
+            </section>
+            
+            <section class="content-section">
+                <h2>PNG to JPG Image Converter Features</h2>
+                <ul class="feature-list">
+                    <li>100% free to use with no hidden costs or subscription fees</li>
+                    <li>Works entirely in your browser - no server uploads required</li>
+                    <li>Adjustable quality settings from 10% to 100%</li>
+                    <li>Drag and drop support for easy file handling</li>
+                    <li>Mobile-friendly interface that works on all devices</li>
+                    <li>Instant preview of both original and converted images</li>
+                    <li>No file size limits for processing (browser-dependent)</li>
+                    <li>Privacy-focused - all conversion happens locally</li>
+                    <li>No registration or account creation needed</li>
+                    <li>Fast conversion speed even for large images</li>
+                </ul>
+            </section>
+            
+            <!-- <div class="ad-placeholder">
+                Ad placeholder after FAQ
+                Advertisement
+            </div> -->
+            
+            <section class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I convert a PNG file to a JPG?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Converting PNG to JPG is simple with our tool. Just upload your PNG file by clicking the upload area or dragging and dropping it. The conversion happens automatically, and you can preview the result before downloading. Adjust the quality slider if you want to control the file size, then click download to save your JPG image.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this PNG to JPG converter free to use?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our PNG to JPG converter is completely free to use. There are no hidden fees, no subscription requirements, and no limits on how many images you can convert. You can use it as often as you need without any restrictions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is it safe to convert my images? Are they stored anywhere?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely safe. Our converter works entirely in your browser using client-side JavaScript. Your images are never uploaded to any server - all processing happens on your device. Once you close the page, no trace of your files remains. Your privacy is completely protected.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Does this converter work on mobile devices?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our PNG to JPG converter is fully optimized for mobile devices. It works on smartphones and tablets running iOS, Android, or any mobile browser. The interface automatically adjusts to smaller screens, and you can upload images directly from your mobile device's photo gallery.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will converting PNG to JPG reduce image quality?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>JPG uses lossy compression, which means some quality reduction is expected, but with our quality slider set to 90% (the default), the difference is usually imperceptible to the human eye. You can adjust the quality from 10% to 100% to balance file size and image quality according to your needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How to convert PNG to JPG without losing quality?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To minimize quality loss, set the quality slider to 95-100%. At these settings, the JPG will maintain excellent visual quality while still providing file size reduction compared to PNG. Keep in mind that JPG format inherently uses lossy compression, so some minimal quality loss is unavoidable, but at high quality settings it's typically not noticeable.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's the difference between PNG and JPG formats?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>PNG is a lossless format that supports transparency and is ideal for graphics with sharp edges or text. JPG uses lossy compression, doesn't support transparency, but creates much smaller file sizes, making it perfect for photographs and web images where file size matters more than perfect quality.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#disclaimer">Disclaimer</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="footer-section" id="privacy">
+                <h3>Privacy Policy</h3>
+                <p>We respect your privacy completely. Our PNG to JPG converter processes all images locally in your browser. No images are uploaded to our servers, and we don't collect, store, or share any of your personal data or files. Your conversions are private and secure.</p>
+            </div>
+            
+            <div class="footer-section" id="disclaimer">
+                <h3>Disclaimer</h3>
+                <p>This tool is provided "as is" without any warranties. While we strive to provide accurate and reliable conversion services, we cannot guarantee that the tool will always be available or error-free. Users are responsible for backing up their original files before conversion.</p>
+            </div>
+            
+            <div class="footer-section" id="contact">
+                <h3>Contact</h3>
+                <p>If you have any questions, suggestions, or encounter any issues with our PNG to JPG converter, please feel free to reach out. We're committed to providing the best possible user experience and welcome your feedback.</p>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> PNG to JPG Converter. All rights reserved. | <span id="currentDateTime"></span></p>
+            </div>
+        </footer>
+    </div>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PNG to JPG Converter",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Free online tool to convert PNG images to JPG format. Fast, secure, and works entirely in your browser.",
+        "featureList": [
+            "Convert PNG to JPG",
+            "Adjustable quality settings",
+            "Drag and drop support",
+            "Mobile-friendly",
+            "Privacy-focused client-side processing"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I convert a PNG file to a JPG?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Converting PNG to JPG is simple with our tool. Just upload your PNG file by clicking the upload area or dragging and dropping it. The conversion happens automatically, and you can preview the result before downloading. Adjust the quality slider if you want to control the file size, then click download to save your JPG image."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this PNG to JPG converter free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our PNG to JPG converter is completely free to use. There are no hidden fees, no subscription requirements, and no limits on how many images you can convert."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is it safe to convert my images? Are they stored anywhere?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely safe. Our converter works entirely in your browser using client-side JavaScript. Your images are never uploaded to any server - all processing happens on your device. Once you close the page, no trace of your files remains."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this converter work on mobile devices?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our PNG to JPG converter is fully optimized for mobile devices. It works on smartphones and tablets running iOS, Android, or any mobile browser."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will converting PNG to JPG reduce image quality?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "JPG uses lossy compression, which means some quality reduction is expected, but with our quality slider set to 90% (the default), the difference is usually imperceptible to the human eye. You can adjust the quality from 10% to 100% to balance file size and image quality."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How to convert PNG to JPG without losing quality?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To minimize quality loss, set the quality slider to 95-100%. At these settings, the JPG will maintain excellent visual quality while still providing file size reduction compared to PNG."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <script>
+        // Dark Mode Toggle Functionality
+        (function() {
+            const themeCheckbox = document.getElementById('themeCheckbox');
+            const html = document.documentElement;
+            
+            // Function to get theme preference
+            function getThemePreference() {
+                // Check localStorage first
+                const stored = localStorage.getItem('theme');
+                if (stored) {
+                    return stored;
+                }
+                // Check system preference
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    return 'dark';
+                }
+                return 'light';
+            }
+            
+            // Function to set theme
+            function setTheme(theme) {
+                if (theme === 'dark') {
+                    html.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    if (themeCheckbox) themeCheckbox.checked = true;
+                } else {
+                    html.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                    if (themeCheckbox) themeCheckbox.checked = false;
+                }
+            }
+            
+            // Initialize theme on page load
+            const initialTheme = getThemePreference();
+            setTheme(initialTheme);
+            
+            // Toggle theme on checkbox change
+            if (themeCheckbox) {
+                themeCheckbox.addEventListener('change', () => {
+                    const newTheme = themeCheckbox.checked ? 'dark' : 'light';
+                    setTheme(newTheme);
+                });
+            }
+            
+            // Listen for system theme changes
+            if (window.matchMedia) {
+                const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                mediaQuery.addEventListener('change', (e) => {
+                    // Only auto-switch if user hasn't manually set a preference
+                    if (!localStorage.getItem('theme')) {
+                        setTheme(e.matches ? 'dark' : 'light');
+                    }
+                });
+            }
+        })();
+        
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const previewSection = document.getElementById('previewSection');
+        const originalPreview = document.getElementById('originalPreview');
+        const convertedPreview = document.getElementById('convertedPreview');
+        const originalInfo = document.getElementById('originalInfo');
+        const convertedInfo = document.getElementById('convertedInfo');
+        const qualitySlider = document.getElementById('qualitySlider');
+        const qualityValue = document.getElementById('qualityValue');
+        const convertBtn = document.getElementById('convertBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const convertAnotherBtn = document.getElementById('convertAnotherBtn');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const convertedPreviewBox = document.getElementById('convertedPreviewBox');
+        const previewContainer = document.getElementById('previewContainer');
+        
+        let currentFile = null;
+        let convertedBlob = null;
+        
+        // Update copyright year and date/time
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById('currentYear').textContent = now.getFullYear();
+            
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit',
+                timeZoneName: 'short'
+            };
+            document.getElementById('currentDateTime').textContent = now.toLocaleDateString('en-US', options);
+        }
+        
+        // Update date/time on load and every minute
+        updateDateTime();
+        setInterval(updateDateTime, 60000);
+        
+        // Upload area click
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        // Drag and drop
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+        
+        // File input change
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+        
+        // Quality slider
+        qualitySlider.addEventListener('input', (e) => {
+            const quality = parseInt(e.target.value);
+            qualityValue.textContent = quality + '%';
+            // Only auto-reconvert if image was already converted
+            if (currentFile && convertedBlob) {
+                progressContainer.classList.add('active');
+                updateProgress(50, 'Re-converting with new quality...');
+                setTimeout(() => {
+                    convertImage(currentFile, quality / 100);
+                }, 100);
+            }
+        });
+        
+        // Convert button
+        convertBtn.addEventListener('click', () => {
+            if (currentFile) {
+                // Hide converted preview if it exists
+                convertedPreviewBox.style.display = 'none';
+                downloadBtn.style.display = 'none';
+                
+                // Show progress bar
+                progressContainer.style.display = 'block';
+                progressContainer.classList.add('active');
+                convertBtn.style.display = 'none';
+                
+                // Force a reflow to ensure display change takes effect
+                void progressContainer.offsetHeight;
+                
+                // Start with initial progress
+                updateProgress(0, 'Preparing conversion...');
+                
+                // Use requestAnimationFrame to ensure the progress bar is visible before starting conversion
+                requestAnimationFrame(() => {
+                    setTimeout(() => {
+                        convertImage(currentFile, qualitySlider.value / 100);
+                    }, 300);
+                });
+            }
+        });
+        
+        // Download button
+        downloadBtn.addEventListener('click', () => {
+            if (convertedBlob) {
+                const url = URL.createObjectURL(convertedBlob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = getFileName(currentFile.name) + '.jpg';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+        });
+        
+        // Convert another button
+        convertAnotherBtn.addEventListener('click', () => {
+            resetConverter();
+        });
+        
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+        
+        function handleFile(file) {
+            if (!file.type.startsWith('image/png')) {
+                alert('Please upload a PNG file.');
+                return;
+            }
+            
+            if (file.size > 10 * 1024 * 1024) {
+                alert('File size must be less than 10MB.');
+                return;
+            }
+            
+            currentFile = file;
+            convertedBlob = null;
+            previewSection.classList.add('active');
+            progressContainer.classList.remove('active');
+            convertedPreviewBox.style.display = 'none';
+            convertBtn.style.display = 'block';
+            downloadBtn.style.display = 'none';
+            convertAnotherBtn.style.display = 'none';
+            
+            const reader = new FileReader();
+            
+            reader.onload = (e) => {
+                originalPreview.src = e.target.result;
+                originalInfo.textContent = `Size: ${formatFileSize(file.size)}`;
+            };
+            
+            reader.readAsDataURL(file);
+        }
+        
+        function updateProgress(percent, text) {
+            if (progressBar && progressText) {
+                progressBar.style.width = percent + '%';
+                progressBar.textContent = percent + '%';
+                progressText.textContent = text;
+            }
+        }
+        
+        function convertImage(file, quality) {
+            // Update progress with delays to make it visible
+            setTimeout(() => {
+                updateProgress(10, 'Loading image...');
+            }, 100);
+            
+            const img = new Image();
+            const reader = new FileReader();
+            
+            reader.onload = (e) => {
+                setTimeout(() => {
+                    updateProgress(30, 'Processing image...');
+                }, 200);
+                
+                img.onload = () => {
+                    setTimeout(() => {
+                        updateProgress(50, 'Converting to JPG...');
+                    }, 200);
+                    
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    
+                    const ctx = canvas.getContext('2d');
+                    ctx.fillStyle = '#FFFFFF';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0);
+                    
+                    setTimeout(() => {
+                        updateProgress(70, 'Rendering image...');
+                    }, 200);
+                    
+                    canvas.toBlob((blob) => {
+                        if (blob) {
+                            setTimeout(() => {
+                                updateProgress(90, 'Finalizing...');
+                            }, 200);
+                            
+                            setTimeout(() => {
+                                convertedBlob = blob;
+                                convertedPreview.src = URL.createObjectURL(blob);
+                                convertedInfo.textContent = `Size: ${formatFileSize(blob.size)}`;
+                                
+                                updateProgress(100, 'Conversion complete!');
+                                
+                                setTimeout(() => {
+                                    progressContainer.classList.remove('active');
+                                    progressContainer.style.display = 'none';
+                                    convertedPreviewBox.style.display = 'block';
+                                    convertBtn.style.display = 'none';
+                                    downloadBtn.style.display = 'block';
+                                    convertAnotherBtn.style.display = 'block';
+                                    downloadBtn.disabled = false;
+                                }, 800);
+                            }, 200);
+                        }
+                    }, 'image/jpeg', quality);
+                };
+                
+                img.src = e.target.result;
+            };
+            
+            reader.readAsDataURL(file);
+        }
+        
+        function getFileName(name) {
+            return name.replace(/\.[^/.]+$/, '');
+        }
+        
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+        }
+        
+        function resetConverter() {
+            currentFile = null;
+            convertedBlob = null;
+            previewSection.classList.remove('active');
+            progressContainer.classList.remove('active');
+            progressContainer.style.display = 'none';
+            convertedPreviewBox.style.display = 'none';
+            convertBtn.style.display = 'none';
+            downloadBtn.style.display = 'none';
+            convertAnotherBtn.style.display = 'none';
+            fileInput.value = '';
+            qualitySlider.value = 90;
+            qualityValue.textContent = '90%';
+            downloadBtn.disabled = false;
+            if (progressBar) {
+                progressBar.style.width = '0%';
+            }
+        }
+    </script>
+</body>
+</html>
